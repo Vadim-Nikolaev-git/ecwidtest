@@ -5,22 +5,20 @@
 .clickable_area:hover {
   fill: rgba(0, 0, 255, 0.459);
 }
-.clickable_areafocus {
-  fill: rgba(0, 0, 255, 0.459);
-}
-.clickable_area:active {
-  fill: rgba(0, 0, 255, 0.459);
-}
 
-
-.header {
-  display: flex
+header {
+  display: flex;
 }
 
 .delete_btn {
-  margin-left: 50px;
+  margin-right: 50px;
+  cursor: pointer;
 }
 
 #success {
-  display: none
+  display: none;
+}
+
+#carimg {
+  display: none;
 }

@@ -1,12 +1,15 @@
+//задаются переменные
+var successBlock = document.getElementById('success')
+var carimgBlock = document.getElementById('carimg')
+
 //запуск проверки на количество товара при загрузке страницы
-// document.addEventListener('load', checkProductsQuantity);
 window.onload = () => {
   setTimeout(() => {
     checkProductsQuantity(() => {
       console.log("Проверка товаров завершена");
     });
-  }, 700);
-  checkProductsQuantity(), console.log("страница загружена, скрипт начил работу");
+  }, 600);
+  console.log("страница загружена, скрипт начал работу");
 }
 
 //ф-ия для проверки корзины и добавления товара в корзину
@@ -25,7 +28,6 @@ function checkCart(clicked_id){
   });
 }
 
-
 // добавит товар если условие проерки выполнено
 function addToCart(clicked_id){
   var product = {
@@ -37,38 +39,8 @@ function addToCart(clicked_id){
       console.log('Добавлен товар с id - ', clicked_id);
     }
   }
-
   Ecwid.Cart.addProduct(product);
-
 }
-
-// Проверка количества товара в корзине
-// function checkProductsQuantity () {
-//   function cartCallback(cart) {
-//     console.log(cart);
-//     const productsQuantity = cart.productsQuantity;
-//     console.log("общеее кол-во товаров", productsQuantity);
-//     if (productsQuantity == 5) {
-//       console.log("Вы собрали автомобиль");
-//       hideGroup ()
-//     } else if (productsQuantity == 0) {
-//       showGroup ()
-//     } else {
-//       console.log("ошибка в проверке товара на количество");
-//     }
-//     console.log("функция checkProductsQuantity завершила работу");
-
-//     if (callback) {
-//       callback();
-//     }
-//   }
-
-//   Ecwid.Cart.get(cartCallback);
-// }
-
-
-
-
 
 // Проверка количества товара в корзине
 function checkProductsQuantity () {
@@ -78,9 +50,9 @@ function checkProductsQuantity () {
     console.log("общеее кол-во товаров", productsQuantity);
     if (productsQuantity == 5) {
       console.log("Вы собрали автомобиль");
-      hideGroup ()
-    } else if (productsQuantity == 0) {
-      showGroup ()
+      hideCar ()
+    } else if (productsQuantity < 5) {
+      showCar ()
     } else {
       console.log("ошибка в проверке товара на количество");
     }
@@ -88,19 +60,14 @@ function checkProductsQuantity () {
   });
 }
 
-
-//задаются переменные
-var successBlock = document.getElementById('success')
-var carimgBlock = document.getElementById('carimg')
-
 // добавляется надпись о собранном авто, скрывается картинку авто
-function hideGroup () {
+function hideCar () {
 successBlock.style.display = "block";
 carimgBlock.style.display = "none";
 }
 
-// добавляется надпись о собранном авто, скрывается картинку авто
-function showGroup () {
+// скрывается надпись о собранном авто, отображается картинку авто
+function showCar () {
   successBlock.style.display = "none";
   carimgBlock.style.display = "block";
 }
@@ -116,5 +83,4 @@ Ecwid.Cart.clear(function(success,error) {
       console.log("Cart clear failed. Error message: " + error);
   }
 });
-
 }
