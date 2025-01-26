@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vadim Nikolaev test to ecwid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="ec-cart-widget"></div>
+      <div>
+        <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?111811272&data_platform=code&data_date=2025-01-22" charset="utf-8"></script>
+        <script type="text/javascript">Ecwid.init();</script>
+      </div>
+
+      <div>
+        <img class="delete_btn" width="46" height="46" src="./img/delete.png" alt="очистить корзину" onclick="removeProduct();">
+      </div>
+  </header>
+
+  <main class="main">
+    <div id="success" width="768" height="534">
+      <h1>
+        Вы собрали автомобиль
+      </h1>
+    </div>
+
+    <svg id="carimg" width="768" height="534">
+      <image href="./img/car.jpg" alt="Изображение автомобиля" usemap="#carmap"/>
+        <rect id="721350866" class="clickable_area" x="15" y="290" width="30" height="35" fill="#0000ff34" onclick="checkCart(this.id);"/>
+        <circle id="721350867" class="clickable_area" cx="140" cy="375" r="60" fill="#0000ff34" onclick="checkCart(this.id);"/>
+        <circle id="721350867" class="clickable_area" cx="535" cy="375" r="60" fill="#0000ff34" onclick="checkCart(this.id);"/>
+        <rect id="721351583" class="clickable_area" x="230" y="275" width="235" height="100" fill="#0000ff34" onclick="checkCart(this.id);"/>
+        <rect id="721352082" class="clickable_area" x="305" y="210" width="170" height="60" fill="#0000ff34" onclick="checkCart(this.id);"/>
+        <polygon id="721351585" class="clickable_area" points="600,275 715,275 730,315 685,365 600,380 600,275" fill="#0000ff34" onclick="checkCart(this.id)"/>
+    </svg>
+
+    <button onclick="checkProductsQuantity();">test</button>
+
+  </main>
+
+</body>
+
+<script src="./scripts.js"></script>
+
+</html>

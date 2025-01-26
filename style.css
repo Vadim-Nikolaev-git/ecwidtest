@@ -1,0 +1,26 @@
+.clickable_area {
+  fill: rgba(0, 0, 255, 0.205);
+}
+
+.clickable_area:hover {
+  fill: rgba(0, 0, 255, 0.459);
+}
+.clickable_areafocus {
+  fill: rgba(0, 0, 255, 0.459);
+}
+.clickable_area:active {
+  fill: rgba(0, 0, 255, 0.459);
+}
+
+
+.header {
+  display: flex
+}
+
+.delete_btn {
+  margin-left: 50px;
+}
+
+#success {
+  display: none
+}
